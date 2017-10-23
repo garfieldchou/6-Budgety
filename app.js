@@ -11,9 +11,11 @@ var UIController = (function() {
     
     return {
         getinput: function() {
-            var type = document.querySelector('.add__type').value; // will be either inc or exp
-            var description = document.querySelector('.add__description').value;
-            var value = document.querySelector('.add__value').value;
+            return {
+                type: document.querySelector('.add__type').value, // will be either inc or exp
+                description: document.querySelector('.add__description').value,
+                value: document.querySelector('.add__value').value
+            };
         }
     };
     
