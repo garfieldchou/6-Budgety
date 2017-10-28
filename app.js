@@ -77,6 +77,15 @@ var budgetController = (function() {
 
         },
 
+        getBudget: function() {
+            return {
+                budget: data.budget,
+                totalInc: data.totals.inc,
+                totalExp: data.totals.exp,
+                percentage: data.percentage
+            };
+        },
+
         testing: function() {
             console.log(data);
         }
@@ -169,8 +178,10 @@ var controller = (function(budgetCtrl, UICtrl) {
         budgetCtrl.calculateBudget();
 
         // 2. Return the budget
+        var budget = budgetCtrl.getBudget();
 
         // 3. Display the budget on the UI
+        console.log(budget);
     };
 
     var ctrlAddItem = function() {
